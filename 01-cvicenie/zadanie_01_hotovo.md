@@ -1,44 +1,46 @@
-# ZaujÌmavÈ JavaScript aplik·cie 
+# Zauj√≠mav√© JavaScript aplik√°cie 
 
 - normit
 - torrent - Download torrents from the command line
 - MySportsFeeds
 
 ## normit
-[https://www.npmjs.com/package/normit](https://www.npmjs.com/package/normit)
-N·stroj na prekladanie viet priamo v termin·li
-### Uk·ûka aplik·cie
-Inötal·cia:
+<https://www.npmjs.com/package/normit>
+
+N√°stroj na prekladanie viet priamo v termin√°li
+### Uk√°≈æka aplik√°cie
+In≈°tal√°cia:
 
     npm install normit -g
-Pouûitie:
+Pou≈æitie:
 
 	normit 'source_language'  'target_language'  'text'
 
-PrÌklady:
+Pr√≠klady:
 
 	normit en es "hey cowboy where is your horse?"
-	=>  "Hey vaquero dÛnde est· tu caballo?"
+	=>  "Hey vaquero d√≥nde est√° tu caballo?"
 
 	normit fr en "qui est votre papa?"
 	=>  "Who's Your Daddy?"
 
 ### Charakteristika
-//TODO: Doplniù technolÛgie
+//TODO: Doplni≈• technol√≥gie
 
 
 ## torrent
+<https://github.com/maxogden/torrent>
 
-[https://github.com/maxogden/torrent](https://github.com/maxogden/torrent)
-UmoûÚuje sùahovaù torrenty cez prÌkazov˝ riadok. StaËÌ pridaù cestu k .torrent s˙boru, alebo cestu na magnet link.
-Tieû vie vytv·raù a seedovaù torrenty.
+Umo≈æ√≤uje s≈•ahova≈• torrenty cez pr√≠kazov√Ω riadok. Sta√®√≠ prida≈• cestu k .torrent s√∫boru, alebo cestu na magnet link.
+Tie≈æ vie vytv√°ra≈• a seedova≈• torrenty.
 
-### Uk·ûka aplik·cie
-![Uk·ûka aplik·cie](obr1.png)
+
+### Uk√°≈æka aplik√°cie
+![Uk√°≈æka aplik√°cie](obr1.png)
 
 	 torrent subor.torrent
 
- PoËas sùahovania vypisuje progress:
+ Po√®as s≈•ahovania vypisuje progress:
 
 	1 file(s) in torrent
 	ubuntu-14.04.iso
@@ -47,20 +49,21 @@ Tieû vie vytv·raù a seedovaù torrenty.
 	Uploaded 0 B (0 B/s)
 
 ### Charakteristika
-//TODO: Doplniù technolÛgie
+//TODO: Doplni≈• technol√≥gie
 
 ## MySportsFeeds
-[https://www.npmjs.com/package/mysportsfeeds-node](https://www.npmjs.com/package/mysportsfeeds-node)
-Api na zÌskavanie öportov˝ch d·t. M· k dispozÌcii real-time, ale aj historickÈ data napr. z NHL alebo NBA
-### Uk·ûka aplik·cie
-Najprv je potrebn· autentifik·cia
+<https://www.npmjs.com/package/mysportsfeeds-node>
+
+Api na z√≠skavanie ≈°portov√Ωch d√°t. M√° k dispoz√≠cii real-time, ale aj historick√© data napr. z NHL alebo NBA
+
+### Uk√°≈æka aplik√°cie
+Najprv je potrebn√° autentifik√°cia
 
 	msf.authenticate("<YOUR_API_KEY>", "MYSPORTSFEEDS");
-N·sledne mÙûeme posielaù requesty napr. (Vöetky NBA 2016-2017 z·pasy, v ktor˝ch hral Stephen Curry, v JSON form·te):
+N√°sledne m√¥≈æeme posiela≈• requesty napr. (V≈°etky NBA 2016-2017 z√°pasy, v ktor√Ωch hral Stephen Curry, v JSON form√°te):
 
 	var data = msf.getData('nba', '2016-2017-regular', 'player_gamelogs', 'json', {player: 'stephen-curry'});
 
 	
 ### Charakteristika
-//TODO: Doplniù technolÛgie
-
+//TODO: Doplni≈• technol√≥gie
