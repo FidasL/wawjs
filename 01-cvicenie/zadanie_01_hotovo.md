@@ -1,13 +1,13 @@
 # Zaujímavé JavaScript aplikácie 
 
 - normit
-- torrent - Download torrents from the command line
+- torrent
 - MySportsFeeds
 
 ## normit
+### Zdroj
 <https://www.npmjs.com/package/normit>
 
-Nástroj na prekladanie viet priamo v termináli
 ### Ukážka aplikácie
 Inštalácia:
 
@@ -25,22 +25,19 @@ Príklady:
 	=>  "Who's Your Daddy?"
 
 ### Charakteristika
-//TODO: Doplniť technológie
-
+Nástroj na prekladanie viet priamo v termináli, je napísaný v Node.js. 
 
 ## torrent
+
+### Zdroj
 <https://github.com/maxogden/torrent>
-
-Umožòuje sťahovať torrenty cez príkazový riadok. Staèí pridať cestu k .torrent súboru, alebo cestu na magnet link.
-Tiež vie vytvárať a seedovať torrenty.
-
 
 ### Ukážka aplikácie
 ![Ukážka aplikácie](obr1.png)
 
 	 torrent subor.torrent
 
- Poèas sťahovania vypisuje progress:
+ Počas sťahovania vypisuje progress:
 
 	1 file(s) in torrent
 	ubuntu-14.04.iso
@@ -49,12 +46,12 @@ Tiež vie vytvárať a seedovať torrenty.
 	Uploaded 0 B (0 B/s)
 
 ### Charakteristika
-//TODO: Doplniť technológie
+CLI nástroj na sťahovanie torrentov. Napísaný v Node.js. Stačí pridať cestu k .torrent súboru, alebo cestu na magnet link a môžte sťahovať. Tiež vie vytvárať a seedovať torrenty
 
 ## MySportsFeeds
-<https://www.npmjs.com/package/mysportsfeeds-node>
 
-Api na získavanie športových dát. Má k dispozícii real-time, ale aj historické data napr. z NHL alebo NBA
+### Zdroj
+<https://www.npmjs.com/package/mysportsfeeds-node>
 
 ### Ukážka aplikácie
 Najprv je potrebná autentifikácia
@@ -66,4 +63,4 @@ Následne môžeme posielať requesty napr. (Všetky NBA 2016-2017 zápasy, v kt
 
 	
 ### Charakteristika
-//TODO: Doplniť technológie
+Api na získavanie športových dát. Má k dispozícii real-time, ale aj historické data napríklad z NHL alebo NBA. Môže to byť užitočné pri práci so športovými dátami. Dostupný pre viacero jazykov, okrem iného aj pre Node.js
