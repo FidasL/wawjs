@@ -1,28 +1,27 @@
 # Zaujímavé JavaScript aplikácie 
 
-- normit
+- Google Translate CLI
 - torrent
 - MySportsFeeds
 
-## normit
+## Google Translate CLI
 ### Zdroj
-<https://www.npmjs.com/package/normit>
+<https://www.npmjs.com/package/google-translate-cli>
 
 ### Ukážka aplikácie
 Inštalácia:
 
-    npm install normit -g
+    npm install -g google-translate-cli
 Použitie:
 
-	normit 'source_language'  'target_language'  'text'
+	translate -s es -t en 'Quiero traducir este texto'
+	
+	-s = source language; -t = target language
 
 Príklady:
 
-	normit en es "hey cowboy where is your horse?"
-	=>  "Hey vaquero dónde está tu caballo?"
-
-	normit fr en "qui est votre papa?"
-	=>  "Who's Your Daddy?"
+	translate -s fr -t en "qui est votre papa?"
+	who is your dad?
 
 ### Charakteristika
 Nástroj na prekladanie viet priamo v termináli, je napísaný v Node.js. 
