@@ -10,7 +10,12 @@ describe("Creating objects", function() {
       // TODO:
       //
       //
-     
+      //
+      a: 10,
+      b: function(){
+        return this.a;
+      }
+
     };
 
     assert(o.hasOwnProperty("a") && o.hasOwnProperty("b"), "Object has two properties");
@@ -25,10 +30,10 @@ describe("Creating objects", function() {
     let o = {
       // create object with property and method
       // use method shortcut syntax
-      // TODO:
-      //
-      //
-      
+      // a: 10,
+      get b(){
+        return this.a;
+      }
     };
 
     assert(o.hasOwnProperty("a") && o.hasOwnProperty("b"), "Object has two properties");
@@ -38,11 +43,24 @@ describe("Creating objects", function() {
     assert(o.b === o.a);
   });
   it("03 - non enumerable properties", function() {
-    // create object with property "a" "hidden" 
+    // create object with property "a" "hidden"
     // and accessible, only with getter b
     // b shall be visible (enumerable)
-    let o; //TODO: use Object.create...
-    
+   let o;
+
+    o = Object.create(null, {
+      a: {},
+      b: {
+        get() {
+          return this.a;
+        },
+        enumerable: true
+      }
+
+    });
+
+
+
 
     assert.deepStrictEqual(o && Object.keys(o), ["b"], "shall have ONE enumerable property b")
     assert(o.b === o.a, "b is property and return value of a");
@@ -56,8 +74,13 @@ describe("Creating objects", function() {
         return this.a;
       }
     };
-    let o; // TODO: inherit from base using Object.create... 
-    
+    let o = Object.create(base);
+    Object.defineProperty(o, "a", {
+      value: 10,
+      writable: true,
+      enumerable: true
+    });
+
 
     assert(typeof o === "object");
     assert("b" in o && "a" in o, "shall have properties a,b");
@@ -71,23 +94,33 @@ describe("Creating objects", function() {
 
   });
   it("05 - create object not inherited from anything", function() {
-    let o; //TODO:
-    
+    let o = Object.create(null);
+
 
     assert(typeof o === "object");
     assert(Object.getPrototypeOf(o) === null);
   });
   it("06 - modify API of array instance", function() {
+
+
     let arr = ["a", "b", "c"];
     arr.push(666);
-    assert.deepStrictEqual(arr, ["a", "b", "c", 666], "this is standard behavior");
+
 
     function typedArray(arr) {
-
-      return arr;
+      const isString = s => typeof s == "string";
+      const oldPush = arr.push;
+      const newPush = (...args) => oldPush.apply(arr, args.filter(isString));
+      return Object.defineProperty(arr, "push", {
+          value: newPush,
+          configurable: true
+      });
     }
+
+
     let orig = ["a", "b", "c"];
     let arr2 = typedArray(orig);
+
     arr2.push(666); //will silently ignore
     arr2.push({}); //will silently ignore
     assert.deepStrictEqual(arr2, ["a", "b", "c"], "typed array wil silently ignore non string value");
@@ -104,13 +137,19 @@ describe("Creating objects", function() {
         return this.a;
       }
     };
-    //TODO: create object with own "a" and  "b" from prototype
+
     function MyObject(a) {
-      // TODO: define own property
-     
+       let o = Object.create(base);
+       Object.defineProperty(o, "a", {
+        value: a,
+        enumerable: true
+       });
+
+       return o;
+
     }
     // TODO: define inherited properties
-   
+
 
     let o = new MyObject("test");
     assert("b" in o && "a" in o, "shall have properties a,b");
@@ -125,10 +164,16 @@ describe("Creating objects", function() {
   it("09 - create objects with classes", function() {
     // same as previous just use class syntax
     // create object with own "a" and  "b" from prototype
-    class MyObject {
-      // TODO: 
-      
-    }
+
+    class MyObject{
+      constructor(a){
+        this.a = a;
+      }
+      get b(){
+        return this.a;
+      }
+
+    };
 
 
     let o = new MyObject("test");
