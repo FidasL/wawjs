@@ -1,4 +1,4 @@
-const saveSomewhere = require("../src/saveSomewhere2.js");
+const saveSomewhere = require("../src/saveSomewhere1.js");
 const assert = require("assert");
 
 const os = require("os");
@@ -19,7 +19,6 @@ describe("saveSomewhere", function() {
     ];
     saveSomewhere(paths, "sample", (err, saved) => {
       if (err) return done(err);
-      
       assert.equal(saved, `${__dirname}/data/a/sample.txt`);
       done();
     })
@@ -35,6 +34,5 @@ describe("saveSomewhere", function() {
       done();
     })
   });
-
 
 });
