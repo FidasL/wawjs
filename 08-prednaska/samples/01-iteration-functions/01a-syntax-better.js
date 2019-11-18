@@ -1,4 +1,4 @@
-/* 
+/*
 plna syntax ma 3 parametre callbacku
 treba ich pouzivat, a nie zbytocne lookupovat
 z upper scope
@@ -12,7 +12,7 @@ var avgs = items.map((n, i, items) => n / items.length);
 
 var avgs = items.map((n, _, { length }) => n / length);
 
-/* 
+/*
 plna syntax funkcie ma 2 parametre,
 druhy je thisArg,
 treba ho pouzivat, a nie zbytocne lookupovat

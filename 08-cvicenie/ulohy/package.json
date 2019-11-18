@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --color test && SELF_TEST=1 node -r ./src/pipe.js -p '`done`'"
+    "test": "mocha --color"
   },
   "keywords": [],
   "author": "",
